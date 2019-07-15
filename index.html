@@ -11,23 +11,80 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="plugin/mmenu.css">
+    <script src="plugin/mmenu.js"></script>
+    <script>
+        document.addEventListener(
+            "DOMContentLoaded", () => {
+                new Mmenu("#menu", {
+                    "extensions": [
+                        "pagedim-black",
+                        "position-right"
+                    ]
+                });
+            }
+        );
+    </script>
+
 </head>
 
 <body>
-    <div class="wrapepr">
+    <div class="page">
+        <div class="header">
+            <a href="#menu">
+                <div id="ham-ani">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- The menu -->
+    <nav id="menu">
+        <ul>
+            <li><a href="/">首頁</a></li>
+            <li><a href="/work">节目</a></li>
+            <li><span>直播</span>
+                <ul>
+                    <li><a href="/about/history">History</a></li>
+                    <li><span>The team</span>
+                        <ul>
+                            <li><a href="/about/team/management">Management</a></li>
+                            <li><a href="/about/team/sales">Sales</a></li>
+                            <li><a href="/about/team/development">Development</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span>Services</span>
+                <ul>
+                    <li><a href="/services/design">Design</a></li>
+                    <li><a href="/services/development">Development</a></li>
+                    <li><a href="/services/marketing">Marketing</a></li>
+                </ul>
+            </li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
         <nav class="navbar">
             <div class="container">
                 <div class="flex_wrapper">
                     <div class="flex_wrapper just_left">
                         <div class="logo_wrapper"></div>
-                        <a href="#" class="nav-tab">首頁</a>
-                        <a href="#" class="nav-tab">节目</a>
-                        <a href="#" class="nav-tab">直播</a>
-                        <a href="#" class="nav-tab">視頻</a>
-                        <a href="#" class="nav-tab">分類</a>
-                        <a href="#" class="nav-tab">快訊</a>
+                        <a href="#" class="nav-tab md-none">首頁</a>
+                        <a href="#" class="nav-tab md-none">节目</a>
+                        <a href="#" class="nav-tab md-none">直播 <span class="tri"></span></a>
+                        <a href="#" class="nav-tab md-none">視頻 <span class="tri"></span></a>
+                        <a href="#" class="nav-tab md-none">分類 <span class="tri"></span></a>
+                        <a href="#" class="nav-tab md-none">快訊</a>
                     </div>
-                    <div class="flex_wrapper just_right">
+                    <div class="flex_wrapper just_right md-pr-40">
                         <a href="#" class="fuc-btn">
                             <i class="material-icons">
                                 video_call
@@ -60,11 +117,73 @@
 
             </div>
         </nav>
-        <div class="section section_001"></div>
-        <div class="section section_002"></div>
-        <div class="section section_003"></div>
-        <div class="section section_004"></div>
+        <div class="position_pager">
+            <a id="firstdot" href="#sec_001" class="dot active">
+                <span class="text">首頁</span>
+            </a>
+            <a href="#sec_002" class="dot">
+                <span class="text">賽事列表</span>
+            </a>
+            <a href="#sec_003" class="dot">
+                <span class="text">節目表</span>
+            </a>
+            <a href="#sec_004" class="dot">
+                <span class="text">最新快訊</span>
+            </a>
+            <a href="#sec_005" class="dot">
+                <span class="text">熱播列表</span>
+            </a>
+            <a href="#sec_006" class="dot">
+                <span class="text">相關資訊</span>
+            </a>
+        </div>
+        <div id="sec_001" class="section section_001">
+            <div class="video_container">
+                <div class="main_video"></div>
+                <div class="video_list"></div>
+            </div>
+        </div>
+        <div id="sec_002" class="section section_002"></div>
+        <div id="sec_003" class="section section_003"></div>
+        <div id="sec_004" class="section section_004"></div>
+        <div id="sec_005" class="section section_005"></div>
+        <div id="sec_006" class="section section_006"></div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ham-ani').click(function () {
+                $(this).addClass('open');
+            });
+            $('.mm-wrapper__blocker').on('click', () => {
+                $('#ham-ani').removeClass('open');
+            })
+            $('.mm-navbar__title').html('赞星TV 主頁選單');
+
+            (function () {
+                'use strict';
+
+                var section = document.querySelectorAll(".section");
+                var sections = {};
+                var i = 0;
+
+                Array.prototype.forEach.call(section, function (e) {
+                    sections[e.id] = e.offsetTop;
+                });
+
+                window.onscroll = function () {
+                    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+                    for (i in sections) {
+                        if (sections[i] <= scrollPosition) {
+                            document.querySelector('.active').setAttribute('class', 'dot');
+                            document.querySelector('a[href*=' + i + ']').setAttribute('class', 'dot active');
+                        }
+                    }
+                };
+            })();
+        });
+    </script>
 </body>
 
 </html>
