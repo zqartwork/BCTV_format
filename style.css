@@ -127,9 +127,10 @@ a {
   right: 5px; }
 
 .position_pager {
-  height: 100vh;
+  height: 240px;
   width: 10px;
   position: fixed;
+  top: calc(50vh - 120px);
   left: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,6 +146,35 @@ a {
   -ms-flex-direction: column;
   flex-direction: column; }
 
+.text {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100px;
+  height: 35px;
+  position: absolute;
+  border-radius: 3px;
+  right: -130px;
+  top: -4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: 1; }
+  .text::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 6px 4px 0;
+    border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
+    position: absolute;
+    left: -6px; }
+
 .dot {
   height: 30px;
   width: 10px;
@@ -156,56 +186,9 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer; }
-  .dot .text {
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    width: 100px;
-    height: 35px;
-    position: absolute;
-    border-radius: 3px;
-    right: -130px;
-    top: -4px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    opacity: 0; }
   .dot.active {
     background: #fff;
     position: relative; }
-    .dot.active .text {
-      color: #fff;
-      background: rgba(0, 0, 0, 0.5);
-      width: 100px;
-      height: 35px;
-      position: absolute;
-      border-radius: 3px;
-      right: -130px;
-      top: -4px;
-      opacity: 1;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
-      .dot.active .text::after {
-        content: "";
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 4px 6px 4px 0;
-        border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
-        position: absolute;
-        left: -6px; }
 
 #ham-ani {
   display: none;
