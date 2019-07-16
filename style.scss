@@ -1,3 +1,10 @@
+$deep: #222;
+$sec: #333;
+$thr: #444;
+$gray: #727272;
+$lightGray: #d8d8d8;
+$w: #fff;
+
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
@@ -21,20 +28,24 @@
 
   /* Support for IE. */
   font-feature-settings: "liga";
-  margin-bottom: 5px;
 }
 html,
 body {
   font-size: 16px;
   font-family: 微軟正黑體;
-  color: #222;
-  background: #f3f3f3;
+  color: $w;
+  background: $deep;
 }
 
 a {
   text-decoration: none;
   border: none;
-  color: #222;
+  color: $w;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
 
 .section {
@@ -59,6 +70,10 @@ a {
   align-items: center;
 }
 
+.flex_column {
+  flex-direction: column;
+}
+
 .just_left {
   justify-content: flex-start;
 }
@@ -67,8 +82,12 @@ a {
   justify-content: flex-end;
 }
 
+.align_start {
+  align-items: flex-start;
+}
+
 .section_001 {
-  background: #b2b2b2;
+  background: $sec;
   height: 830px;
 }
 
@@ -79,9 +98,9 @@ a {
 }
 
 .logo_wrapper {
-  height: 100%;
+  height: 65%;
   width: 108px;
-  background: #727272;
+  background: $gray;
 
   margin-right: 20px;
 }
@@ -98,6 +117,22 @@ a {
   padding: 0 19px;
   height: 100%;
   position: relative;
+
+  &.active {
+    color: $gray;
+    &::after {
+      content: "";
+      height: 5px;
+      width: 60%;
+      position: absolute;
+      bottom: 18%;
+      left: 20%;
+
+      border-radius: 5px;
+
+      background: $gray;
+    }
+  }
 }
 
 .avatar-btn {
@@ -112,6 +147,10 @@ a {
   font-size: 12px;
   display: flex;
   flex-direction: column;
+}
+
+.fuc_tt {
+  margin-top: 5px;
 }
 
 .tri {
@@ -141,7 +180,7 @@ a {
 }
 .text {
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
   width: 100px;
   height: 35px;
   position: absolute;
@@ -162,7 +201,7 @@ a {
     height: 0;
     border-style: solid;
     border-width: 4px 6px 4px 0;
-    border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
+    border-color: transparent rgba(255, 255, 255, 0.2) transparent transparent;
     position: absolute;
     left: -6px;
   }
@@ -174,7 +213,7 @@ a {
 
   border-radius: 10px;
 
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   display: block;
 
   transition: 0.5s;
@@ -187,6 +226,115 @@ a {
   }
 }
 
+// 主要影片播放區
+.video_container {
+  width: 1008px;
+  height: 760px;
+  background: #000;
+
+  padding-top: 70px;
+}
+.rank_container {
+  width: 376px;
+  height: 760px;
+  margin-left: 40px;
+  padding-top: 70px;
+}
+.avatar_first_rank {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+}
+.title_wrapper {
+  max-height: 40px;
+}
+.title_icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+}
+.title_name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.rank_panel {
+  background: $thr;
+  height: 673px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+.rank_header {
+  padding: 24px 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: $thr;
+
+  border-radius: 5px;
+}
+.rank_body {
+  min-height: 373px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 95%;
+  margin: 227px auto 0 auto;
+}
+#rank_body_scroll::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+  border-radius: 5px;
+}
+#rank_body_scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+.rank_item_wrapper {
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+.rank_num {
+  font-size: 18px;
+  font-weight: 700;
+}
+.avatar_first_rank {
+  margin: 10px 0;
+  height: 100px;
+  width: 100px;
+}
+.rank_avatar {
+  height: 50px;
+  width: 50px;
+  margin: 0 10px;
+}
+.ID_first_rank {
+  font-size: 18px;
+  font-weight: 700;
+}
+.ID_rank {
+  font-size: 16px;
+}
+.intro_first_rank {
+  margin: 5px 0;
+  font-size: 13px;
+
+  max-width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.intro_rank {
+  font-size: 13px;
+  color: $lightGray;
+  margin: 5px 0 0 0;
+}
+.rank_item_footer {
+  max-width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 // nav-hamberger
 #ham-ani {
   display: none;
@@ -208,7 +356,6 @@ a {
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
-/* Icon 2 */
 
 #ham-ani span {
   display: block;
