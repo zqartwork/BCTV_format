@@ -9,67 +9,57 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script src="js/app.js"></script>
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="plugin/mmenu.css">
-    <script src="plugin/mmenu.js"></script>
-    <script>
-        document.addEventListener(
-            "DOMContentLoaded", () => {
-                new Mmenu("#menu", {
-                    "extensions": [
-                        "pagedim-black",
-                        "position-right"
-                    ]
-                });
-            }
-        );
-    </script>
-
 </head>
 
 <body>
-    <div class="page">
-        <div class="header">
-            <a href="#menu">
-                <div id="ham-ani">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <div class="m-menu">
+        <a href="#" data-target="slide-out" class="sidenav-trigger" id="ham-ani">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="flex_wrapper">
+                        <div class="mmenu_avatar">
+                            <img src="img/avatar.png" alt="">
+                        </div>
+                        <div class="mmenu_item_footer">
+                            <div class="ID_mmenu flex_wrapper just_left">贊星TV官方頻道
+                                <a href="#">
+                                    <i class="material-icons">
+                                        border_color
+                                    </i>
+                                </a>
+                            </div>
+                            <div class="intro_mmenu">專業播報精彩賽事與活動，接下來就會藏起來。</div>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </div>
-    </div>
-    <!-- The menu -->
-    <nav id="menu">
-        <ul>
-            <li><a href="/">首頁</a></li>
-            <li><a href="/work">节目</a></li>
-            <li><span>直播</span>
-                <ul>
-                    <li><a href="/about/history">History</a></li>
-                    <li><span>The team</span>
-                        <ul>
-                            <li><a href="/about/team/management">Management</a></li>
-                            <li><a href="/about/team/sales">Sales</a></li>
-                            <li><a href="/about/team/development">Development</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </li>
-            <li><span>Services</span>
-                <ul>
-                    <li><a href="/services/design">Design</a></li>
-                    <li><a href="/services/development">Development</a></li>
-                    <li><a href="/services/marketing">Marketing</a></li>
-                </ul>
+            <li>
+                <div class="divider"></div>
             </li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="#!">個人中心</a></li>
+            <li><a href="#!">訂閱片櫃</a></li>
+            <li><a href="#!">訊息中心</a></li>
+            <li><a href="#!" class="hotspot">直播吧</a></li>
+            <li><a href="#!">登出</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
         </ul>
-    </nav>
+    </div>
 
     <div class="wrapper">
         <nav class="navbar">
@@ -118,26 +108,167 @@
             </div>
         </nav>
         <div class="position_pager">
-            <a id="firstdot" href="#sec_001" class="dot active">
-            </a>
-            <a href="#sec_002" class="dot">
-            </a>
-            <a href="#sec_003" class="dot">
-            </a>
-            <a href="#sec_004" class="dot">
-            </a>
-            <a href="#sec_005" class="dot">
-            </a>
-            <a href="#sec_006" class="dot">
-            </a>
-            <span class="text">首頁</span>
+            <div class="flex_wrapper flex_column">
+                <ul class="scrollspy_wrapper">
+                    <li>
+                        <a id="firstdot" href="#sec_001" class="dot">
+                            <span class="text">首頁</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sec_002" class="dot">
+                            <span class="text">節目列表</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sec_003" class="dot">
+                            <span class="text">賽事列表</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sec_004" class="dot">
+                            <span class="text">最新快訊</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sec_005" class="dot">
+                            <span class="text">體育熱播</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
         </div>
-        <div id="sec_001" class="section section_001">
+        <div id="sec_001" class="section section_001 scrollspy">
             <div class="container">
                 <div class="flex_wrapper align_start">
                     <div class="video_container">
-                        <div class="main_video"></div>
-                        <div class="video_list"></div>
+                        <div class="main_video">
+                            <div class="video_tag_wrapper">
+                                <a href="" class="video_tag_l">影片分類</a>
+                                <a href="" class="video_tag_l">影片分類</a>
+                                <a href="" class="video_tag_l">影片分類</a>
+                            </div>
+                            <div class="caption">
+                                <div class="flex_wrapper flex_column">
+                                    <div class="avatar_main">
+                                        <img src="img/avatar.png" alt="">
+                                    </div>
+                                    <div class="ID_main">赞星TV官方頻道</div>
+                                    <div class="intro_main">專業播報精彩賽事與活動</div>
+                                    <a href="#" class="main_btn">進入直播間</a>
+                                    <a href="#" class="main_btn">訂閱直播主</a>
+                                </div>
+                            </div>
+                            <video class="current_video" autoplay muted loop
+                                poster="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.jpg">
+                                <source
+                                    src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.mp4"
+                                    type="video/mp4">
+                                <source
+                                    src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.webm"
+                                    type="video/webm">
+                                <source
+                                    src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.ogv"
+                                    type="video/ogg">
+                            </video>
+                        </div>
+                        <div class="video_list">
+                            <div class="flex_wrapper space_between">
+                                <div class="thumb current">
+                                    <div class="thumb_video_title">
+                                        <div class="thumb_room_input_ID">
+                                            這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
+                                        </div>
+                                    </div>
+                                    <div class="thumb_info_wrapper">
+                                        <div class="flex_wrapper just_left">
+                                            <div class="thumb_avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                            <div class="thumb_ID">
+                                                赞星TV官方頻道
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mask"></div>
+                                    <div class="poster">
+                                        <img src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.jpg"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="thumb">
+                                    <div class="poster">
+                                        <img src="https://ak8.picdn.net/shutterstock/videos/1018543888/thumb/1.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="thumb_caption">
+                                        <div class="thumb_video_title">
+                                            <div class="thumb_room_input_ID">
+                                                這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
+                                            </div>
+                                        </div>
+                                        <div class="thumb_info_wrapper">
+                                            <div class="flex_wrapper just_left">
+                                                <div class="thumb_avatar">
+                                                    <img src="img/avatar.png" alt="">
+                                                </div>
+                                                <div class="thumb_ID">
+                                                    赞星TV官方頻道
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumb">
+                                    <div class="poster">
+                                        <img src="https://ak0.picdn.net/shutterstock/videos/31956970/thumb/12.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="thumb_caption">
+                                        <div class="thumb_video_title">
+                                            <div class="thumb_room_input_ID">
+                                                這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
+                                            </div>
+                                        </div>
+                                        <div class="thumb_info_wrapper">
+                                            <div class="flex_wrapper just_left">
+                                                <div class="thumb_avatar">
+                                                    <img src="img/avatar.png" alt="">
+                                                </div>
+                                                <div class="thumb_ID">
+                                                    赞星TV官方頻道
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumb">
+                                    <div class="poster">
+                                        <img src="https://ak9.picdn.net/shutterstock/videos/28284139/thumb/2.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="thumb_caption">
+                                        <div class="thumb_video_title">
+                                            <div class="thumb_room_input_ID">
+                                                這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
+                                            </div>
+                                        </div>
+                                        <div class="thumb_info_wrapper">
+                                            <div class="flex_wrapper just_left">
+                                                <div class="thumb_avatar">
+                                                    <img src="img/avatar.png" alt="">
+                                                </div>
+                                                <div class="thumb_ID">
+                                                    赞星TV官方頻道
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="rank_container flex_wrapper flex_column">
                         <div class="title_wrapper flex_wrapper">
@@ -156,20 +287,20 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="flex_wrapper flex_column">
+                        <div class="flex_wrapper flex_column just_left">
                             <div class="rank_panel">
                                 <div class="rank_header">
                                     <div class="flex_wrapper flex_column just_left">
                                         <div class="rank_num">TOP 1</div>
-                                        <div class="avatar_first_rank">
+                                        <div class="avatar_main">
                                             <img src="img/avatar.png" alt="testAvatar">
                                         </div>
-                                        <div class="ID_first_rank">贊星TV官方頻道</div>
-                                        <div class="intro_first_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
+                                        <div class="ID_main">贊星TV官方頻道</div>
+                                        <div class="intro_main">專業播報精彩賽事與活動，接下來就會藏起來。</div>
                                     </div>
                                 </div>
                                 <div class="rank_body" id="rank_body_scroll">
-                                    <div class="flex_wrapper flex_column">
+                                    <div class="flex_wrapper flex_column align_start">
                                         <div class="rank_item_wrapper">
                                             <div class="flex_wrapper">
                                                 <div class="rank_num_other">2</div>
@@ -286,45 +417,141 @@
                 </div>
             </div>
         </div>
-        <div id="sec_002" class="section section_002"></div>
-        <div id="sec_003" class="section section_003"></div>
-        <div id="sec_004" class="section section_004"></div>
-        <div id="sec_005" class="section section_005"></div>
-        <div id="sec_006" class="section section_006"></div>
+        <div id="sec_002" class="section section_002 pt-nav scrollspy">
+            <div class="container">
+                <div class="title_wrapper flex_wrapper">
+                    <div class="flex_wrapper just_left">
+                        <div class="title_icon">
+                            <img src="img/channel.svg" alt="">
+                        </div>
+                        <div class="title_name">節目列表</div>
+                        <div class="select_container">
+                            <div class="flex_wrapper">
+                                <div class="custom_select">
+                                    <div class="select_title">
+                                        <div class="flex_wrapper just_left">
+                                            <span class="selected">選擇時間</span>
+                                            <i class="material-icons select_i">
+                                                chevron_right
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="date" id="data_input">
+                                    <ul class="select_menu">
+                                        <li id="20190718">07 / 18</li>
+                                        <li id="20190719">07 / 19</li>
+                                        <li id="20190720">07 / 20</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="filter_tag">今日</a>
+                        <a class="filter_tag">昨日</a>
+                        <a class="filter_tag">明日</a>
+                    </div>
+                    <div class="flex_wrapper">
+                        <a class="flex_wrapper more just_right" href="#">
+                            更多節目
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sec_003" class="section section_003 scrollspy">
+            <div class="container">
+                <div class="title_wrapper flex_wrapper">
+                    <div class="flex_wrapper just_left">
+                        <div class="title_icon">
+                            <img src="img/burn.svg" alt="">
+                        </div>
+                        <div class="title_name">賽事列表</div>
+                    </div>
+                    <div class="flex_wrapper">
+                        <a class="flex_wrapper more just_right" href="#">
+                            更多賽事
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sec_004" class="section section_004 scrollspy">
+            <div class="container">
+                <div class="flex_wrapper">
+                    <div class="title_wrapper flex_wrapper">
+                        <div class="flex_wrapper just_left">
+                            <div class="title_icon">
+                                <img src="img/burn.svg" alt="">
+                            </div>
+                            <div class="title_name">最新快訊</div>
+                        </div>
+                        <div class="flex_wrapper">
+                            <a class="flex_wrapper more just_right" href="#">
+                                更多快訊
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="title_wrapper flex_wrapper">
+                        <div class="flex_wrapper just_left">
+                            <div class="title_icon">
+                                <img src="img/burn.svg" alt="">
+                            </div>
+                            <div class="title_name">體育熱播</div>
+                        </div>
+                        <div class="flex_wrapper">
+                            <a class="flex_wrapper more just_right" href="#">
+                                更多熱播
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sec_005" class="section section_005 scrollspy">
+            <div class="container">
+                <div class="title_wrapper flex_wrapper">
+                    <div class="flex_wrapper just_left">
+                        <div class="title_icon">
+                            <img src="img/burn.svg" alt="">
+                        </div>
+                        <div class="title_name">娛樂熱播</div>
+                    </div>
+                    <div class="flex_wrapper">
+                        <a class="flex_wrapper more just_right" href="#">
+                            更多熱播
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#ham-ani').click(function () {
-                $(this).addClass('open');
+            selectCustom();
+            activeTag();
+            stickyNav();
+            $('.scrollspy').scrollSpy();
+            $('.sidenav').sidenav({
+                edge: 'right'
             });
-            $('.mm-wrapper__blocker').on('click', () => {
-                $('#ham-ani').removeClass('open');
-            })
-            $('.mm-navbar__title').html('赞星TV 主頁選單');
-
-            (function () {
-                'use strict';
-
-                var section = document.querySelectorAll(".section");
-                var sections = {};
-                var i = 0;
-
-                Array.prototype.forEach.call(section, function (e) {
-                    sections[e.id] = e.offsetTop;
-                });
-
-                window.onscroll = function () {
-                    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
-                    for (i in sections) {
-                        if (sections[i] <= scrollPosition) {
-                            document.querySelector('.active').setAttribute('class', 'dot');
-                            document.querySelector('a[href*=' + i + ']').setAttribute('class', 'dot active');
-                        }
-                    }
-                };
-            })();
+            slideOpenTrans();
         });
     </script>
 </body>
