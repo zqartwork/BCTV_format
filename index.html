@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>贊星直播 - BestCastTV</title>
+    <title>某某直播 - XXTV</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,7 +13,6 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <script src="js/app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,36 +27,100 @@
             <span></span>
         </a>
         <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="user-view">
-                    <div class="flex_wrapper">
-                        <div class="mmenu_avatar">
-                            <img src="img/avatar.png" alt="">
-                        </div>
-                        <div class="mmenu_item_footer">
-                            <div class="ID_mmenu flex_wrapper just_left">贊星TV官方頻道
-                                <a href="#">
-                                    <i class="material-icons">
-                                        border_color
-                                    </i>
-                                </a>
+            <div class="sidenav_main_section">
+                <ul>
+                    <li>
+                        <a href="#" class="sidenav_main_title">赞星TV直播 主要選單</a>
+                    </li>
+                    <div class="divider divider-deepgray"></div>
+                    <li>
+                        <a href="#">首頁</a>
+                    </li>
+                    <li>
+                        <a href="#">节目</a>
+                    </li>
+                    <li>
+                        <a href="#">直播</a>
+                    </li>
+                    <li>
+                        <a href="#">视频</a>
+                    </li>
+                    <li>
+                        <a href="#">分类</a>
+                    </li>
+                    <li>
+                        <a href="#">快讯</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="divider"></div>
+            <div class="sidenav_personal_selection">
+                <li>
+                    <div class="user-view">
+                        <div class="flex_wrapper">
+                            <div class="mmenu_avatar">
+                                <img src="img/avatar.png" alt="">
                             </div>
-                            <div class="intro_mmenu">專業播報精彩賽事與活動，接下來就會藏起來。</div>
+                            <div class="mmenu_item_footer">
+                                <div class="mmenu_ID flex_wrapper just_left">贊星TV官方頻道
+                                    <a href="#">
+                                        <i class="material-icons">
+                                            border_color
+                                        </i>
+                                    </a>
+                                </div>
+                                <div class="mmenu_intro">專業播報精彩賽事與活動，接下來就會藏起來。</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <li><a href="#!">個人中心</a></li>
-            <li><a href="#!">訂閱片櫃</a></li>
-            <li><a href="#!">訊息中心</a></li>
-            <li><a href="#!" class="hotspot">直播吧</a></li>
-            <li><a href="#!">登出</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <a href="#!" class="flex">
+                        <i class="material-icons">
+                            person
+                        </i>
+                        個人中心
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="flex">
+                        <i class="material-icons">
+                            all_inbox
+                        </i>
+                        訂閱片櫃
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="flex">
+                        <i class="material-icons">
+                            question_answer
+                        </i>
+                        訊息中心
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" id="hotspot" class="flex">
+                        <i class="material-icons">
+                            video_call
+                        </i>
+                        直播吧
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="flex">
+                        <i class="material-icons">
+                            exit_to_app
+                        </i>
+                        登出
+                    </a>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+            </div>
         </ul>
     </div>
 
@@ -107,31 +170,31 @@
 
             </div>
         </nav>
-        <div class="position_pager">
+        <div class="position_pager" id="position_pager">
             <div class="flex_wrapper flex_column">
                 <ul class="scrollspy_wrapper">
                     <li>
-                        <a id="firstdot" href="#sec_001" class="dot">
+                        <a id="firstdot" href="#sec_001" class="dot" data-scroll="sec_001">
                             <span class="text">首頁</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#sec_002" class="dot">
+                        <a href="#sec_002" class="dot" data-scroll="sec_002">
                             <span class="text">節目列表</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#sec_003" class="dot">
+                        <a href="#sec_003" class="dot" data-scroll="sec_003">
                             <span class="text">賽事列表</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#sec_004" class="dot">
+                        <a href="#sec_004" class="dot" data-scroll="sec_004">
                             <span class="text">最新快訊</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#sec_005" class="dot">
+                        <a href="#sec_005" class="dot" data-scroll="sec_005">
                             <span class="text">體育熱播</span>
                         </a>
                     </li>
@@ -460,7 +523,7 @@
                 </div>
             </div>
         </div>
-        <div id="sec_003" class="section section_003 scrollspy">
+        <div id="sec_003" class="section section_003 pt-nav scrollspy">
             <div class="container">
                 <div class="title_wrapper flex_wrapper">
                     <div class="flex_wrapper just_left">
@@ -468,6 +531,29 @@
                             <img src="img/burn.svg" alt="">
                         </div>
                         <div class="title_name">賽事列表</div>
+                        <div class="select_container">
+                            <div class="flex_wrapper">
+                                <div class="custom_select">
+                                    <div class="select_title">
+                                        <div class="flex_wrapper just_left">
+                                            <span class="selected">選擇時間</span>
+                                            <i class="material-icons select_i">
+                                                chevron_right
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="date" id="data_input">
+                                    <ul class="select_menu">
+                                        <li id="20190718">07 / 18</li>
+                                        <li id="20190719">07 / 19</li>
+                                        <li id="20190720">07 / 20</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="filter_tag">今日</a>
+                        <a class="filter_tag">昨日</a>
+                        <a class="filter_tag">明日</a>
                     </div>
                     <div class="flex_wrapper">
                         <a class="flex_wrapper more just_right" href="#">
@@ -480,9 +566,9 @@
                 </div>
             </div>
         </div>
-        <div id="sec_004" class="section section_004 scrollspy">
+        <div id="sec_004" class="section section_004 pt-nav scrollspy">
             <div class="container">
-                <div class="flex_wrapper">
+                <div class="flex_wrapper align_start">
                     <div class="title_wrapper flex_wrapper">
                         <div class="flex_wrapper just_left">
                             <div class="title_icon">
@@ -518,7 +604,7 @@
                 </div>
             </div>
         </div>
-        <div id="sec_005" class="section section_005 scrollspy">
+        <div id="sec_005" class="section section_005 pt-nav sscrollspy">
             <div class="container">
                 <div class="title_wrapper flex_wrapper">
                     <div class="flex_wrapper just_left">
@@ -539,21 +625,157 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer_body">
+            <div class="container">
+                <div class="flex_wrapper just_left align_start space_between">
+                    <div class="footer_item_text">
+                        <ul>
+                            <li class="footer_item_title">
+                                首頁
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_001" class="footer_item">TOP</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_002" class="footer_item">節目表</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_003" class="footer_item">快訊</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_004" class="footer_item">推薦熱門</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_005" class="footer_item">熱播</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_item_text">
+                        <ul>
+                            <li class="footer_item_title">
+                                個人中心
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_001" class="footer_item">帳號管理</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_002" class="footer_item">資產紀錄</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_003" class="footer_item">訊息中心</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_004" class="footer_item">屏蔽名單</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_item_text">
+                        <ul>
+                            <li class="footer_item_title">
+                                訂閱片櫃
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_001" class="footer_item">我的訂閱</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_002" class="footer_item">我的收藏</a>
+                            </li>
+                            <li class="footer_item_text_li">
+                                <a href="#sec_003" class="footer_item">觀看紀錄</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_item_text">
+                        <ul>
+                            <li class="footer_item_title">
+                                其他連結
+                            </li>
+                            <div class="flex_wrapper just_left">
+                                <div class="left_part">
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_001" class="footer_item">帕普TV直播</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_002" class="footer_item">蜂蜂TV直播</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_003" class="footer_item">夜鶯TV直播</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_004" class="footer_item">串流友站一號</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_005" class="footer_item">串流友站一號</a>
+                                    </li>
+                                </div>
+                                <div class="right_part">
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_001" class="footer_item">帕普TV直播</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_002" class="footer_item">蜂蜂TV直播</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_003" class="footer_item">夜鶯TV直播</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_004" class="footer_item">串流友站一號</a>
+                                    </li>
+                                    <li class="footer_item_text_li">
+                                        <a href="#sec_005" class="footer_item">串流友站一號</a>
+                                    </li>
+                                </div>
+                            </div>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="footer_copy">
+            <div class="container">
+                <div class="flex_wrapper flex_column">
+                    <div class="copy_text">赞星TV版权所有©www.beststartv.com</div>
+                    <div class="copy_links">
+                        <div class="flex_wrapper">
+                            <a href="" id="about">关于我们</a>
+                            <a href="" id="contract">用户服务协议</a>
+                            <a href="" id="policy">隐私政策</a>
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div class="flex_wrapper">
+                            <a href="" id="brand">品牌合作 offical_bd@bestcasttv.com</a>
+                            <a href="" id="mail">官方邮箱 offical@bestcasttv.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/app.js"></script>
     <script>
         $(document).ready(function () {
             selectCustom();
             activeTag();
             stickyNav();
-            $('.scrollspy').scrollSpy();
+            // $('.scrollspy').scrollSpy({
+            //     scrollOffset: 0
+            // });
             $('.sidenav').sidenav({
                 edge: 'right'
             });
             slideOpenTrans();
+            scrollSpy();
         });
     </script>
+
 </body>
 
 </html>
